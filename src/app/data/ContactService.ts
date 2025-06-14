@@ -1,18 +1,21 @@
 import {Contact} from './models/Contact';
 import { faker } from '@faker-js/faker';
+import {Injectable} from '@angular/core';
+import { Observable, of } from 'rxjs';
 
-export class DataFactory {
-
+@Injectable({
+  providedIn: 'root'
+})
+export class ContactService {
   private contacts: Contact[] = [];
 
   constructor() {
     this.generateContacts();
   }
 
-  getContacts(): Contact[] {
-    return this.contacts;
+  getContacts(): Observable<Contact[]> {
+    return of (this.contacts);
   }
-
 
   private generateContacts() {
     for (let i = 0; i < 20; i++) {

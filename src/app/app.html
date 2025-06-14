@@ -5,11 +5,23 @@
 <h2>By Daniel Sanchez</h2>
 <div class="container">
   <ul class="nav">
-    <li><a class="nav-link" href="">Home</a></li>
-    <li><a class="nav-link" href="">Contacts</a></li>
-    <li><a class="nav-link" href="">Add New</a></li>
-    <li><a class="nav-link" href="">About...</a></li>
+    <li>
+      <a class="nav-link" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link"
+         routerLink = "/">Home</a>
+    </li>
+    <li>
+      <a class="nav-link" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link"
+         routerLink = "/contacts-index">Contacts</a>
+    </li>
+    <li>
+      <a class="nav-link" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link"
+         routerLink = "/contacts-create">Add New</a>
+    </li>
+    <li>
+      <a class="nav-link" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link"
+         routerLink = "/about">About...</a>
+    </li>
   </ul>
   <hr/>
-  <router-outlet></router-outlet>
+  <router-outlet/>
 </div>

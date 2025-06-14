@@ -2,10 +2,21 @@
 body {
   color: #6f6f6f;
 }
-a.nav-link {
+
+a.nav-link, .nav-link:visited {
   color: lightcoral;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
 }
+
+a.nav-link.active-link {
+  text-decoration: none;
+  color: #6f6f6f;
+  cursor: default;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
