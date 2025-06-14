@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  color: #6f6f6f;
+}
+a.nav-link {
+  color: lightcoral;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { faAddressCard } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [FontAwesomeModule, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
+  faAddressCard = faAddressCard;
   protected title = 'SimpleContact';
 }
