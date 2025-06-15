@@ -1,7 +1,7 @@
 import {Contact} from './models/Contact';
-import { faker } from '@faker-js/faker';
+import { faker} from '@faker-js/faker';
 import {Injectable} from '@angular/core';
-import { Observable, of } from 'rxjs';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,15 @@ export class ContactService {
   }
 
   getContacts(): Observable<Contact[]> {
-    return of (this.contacts);
+    return of(this.contacts);
+  }
+
+  getContact(id: string): Observable<Contact | null> {
+    let contact = this.contacts.find((contact) => contact.id.toString() === id);
+    if (contact != undefined) {
+      return of (contact);
+    }
+    return of (null);
   }
 
   private generateContacts() {
@@ -26,11 +34,12 @@ export class ContactService {
       c.dateOfBirth = faker.date.birthdate({mode: "age", min: 18, max: 59})
       c.homePhone = faker.phone.number();
       c.cellPhone = faker.phone.number();
-      c.address1 = faker.address.streetAddress();
-      c.address2 = faker.address.secondaryAddress();
-      c.city = faker.address.city();
-      c.state = faker.address.state();
-      c.country = faker.address.country();
+      c.address1 = faker.location.streetAddress();
+      c.address2 = faker.location.secondaryAddress();
+      c.city = faker.location.city();
+      c.state = faker.location.state();
+      c.zip = faker.location.zipCode();
+      c.country = faker.location.country();
 
       this.contacts.push(c);
     }

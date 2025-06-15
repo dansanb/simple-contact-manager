@@ -1,1 +1,90 @@
-<p>contacts-view works!</p>
+<div class="component-container">
+  <div class="component-nav-links">
+    <a routerLink="/contacts-index">Back</a>
+    <a [routerLink]="['/contacts-update', contactId]">Update</a>
+  </div>
+
+  @if (this.contact != null) {
+    <div class="field-group">
+      <div class="field-component">
+        <label class="field-label" for="first-name">First Name: </label>
+        <span class="field-value"> {{ contact?.firstName }}</span>
+      </div>
+      <div class="field-component">
+        <label class="field-label" for="middle-name">Middle Name: </label>
+        <span class="field-value"> {{ contact?.middleName }}</span>
+      </div>
+      <div class="field-component">
+        <label class="field-label" for="last-name">Last Name: </label>
+        <span class="field-value"> {{ contact?.lastName }}</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-component">
+        <label class="field-label" for="date-of-birth">Date of Birth: </label>
+        <span class="field-value"> {{ contact?.dateOfBirth | date:'shortDate' }}</span>
+      </div>
+      <div class="field-component">
+        <label class="field-label" for="email">Email: </label>
+        <span class="field-value"> {{ contact?.email }}</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-component">
+        <label class="field-label" for="home-phone">Home Phone: </label>
+        <span class="field-value"> {{ contact?.homePhone }}</span>
+      </div>
+      <div class="field-component">
+        <label class="field-label" for="home-phone">Cell Phone: </label>
+        <span class="field-value"> {{ contact?.cellPhone }}</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-component">
+        <label class="field-label" for="address-1">Address: </label>
+        <span class="field-value"> {{ contact?.address1 }}</span>
+      </div>
+      <div class="field-component">
+        <label class="field-label" for="address-2">Suite # / Apt #: </label>
+        <span class="field-value"> {{ contact?.address2 }}</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-component">
+        <label class="field-label" for="city">City: </label>
+        <span class="field-value"> {{ contact?.city }}</span>
+      </div>
+      <div class="field-component">
+        <label class="field-label" for="state">State: </label>
+        <span class="field-value"> {{ contact?.state }}</span>
+      </div>
+      <div class="field-component">
+        <label class="field-label" for="zip">Zip: </label>
+        <span class="field-value"> {{ contact?.zip }}</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-component">
+        <label class="field-label" for="country">County: </label>
+        <span class="field-value"> {{ contact?.country }}</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-component">
+        <label class="field-label" for="notes">Notes: </label>
+        <span class="field-value"> {{ contact?.notes }}</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-component">
+      </div>
+    </div>
+  }
+</div>

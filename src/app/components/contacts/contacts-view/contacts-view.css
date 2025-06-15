@@ -1,0 +1,23 @@
+.component-container {
+  width: fit-content;
+  margin: 0 auto;
+}
+.component-nav-links {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  a {
+    margin: 10px;
+  }
+}
+.field-group {
+  display: flex;
+
+  .field-component {
+    margin: 10px;
+
+    .field-label {
+      font-weight: bold;
+    }
+  }
+}

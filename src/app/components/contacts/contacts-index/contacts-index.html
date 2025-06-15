@@ -1,1 +1,19 @@
-<p>contacts-index works!</p>
+<table>
+  <tr class="header">
+    <td>Name</td>
+    <td>Phone</td>
+    <td>Email</td>
+    <td></td>
+  </tr>
+  @for (contact of contacts; track contact.id) {
+    <tr>
+      <td>{{ contact.firstName }} {{ contact.lastName }}</td>
+      <td>{{ contact.homePhone }}</td>
+      <td>{{ contact.email }}</td>
+      <td>
+        <a [routerLink]="['/contacts-view',contact.id.toString()]">View</a>
+      </td>
+    </tr>
+  }
+
+</table>
